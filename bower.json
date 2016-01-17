@@ -1,0 +1,38 @@
+{
+  "name": "simpleShopTemplate",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-animate": "~1.4.2",
+    "angular-cookies": "~1.4.2",
+    "angular-sanitize": "~1.4.2",
+    "angular-messages": "~1.4.2",
+    "angular-aria": "~1.4.2",
+    "jquery": "~2.1.4",
+    "angular-resource": "~1.4.2",
+    "angular-ui-router": "~0.2.15",
+    "moment": "momentjs#~2.10.6",
+    "animate.css": "~3.4.0",
+    "font-awesome": "4.2.0",
+    "bootstrap": "~3.3.6",
+    "site-template": "https://github.com/IronSummitMedia/startbootstrap-stylish-portfolio.git#v1.0.2"
+  },
+  "overrides": {
+    "site-template": {
+      "main": [
+        "css/stylish-portfolio.css"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ]
+    }
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.2"
+  },
+  "resolutions": {
+    "angular": "~1.4.2"
+  }
+}
