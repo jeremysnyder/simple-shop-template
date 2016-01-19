@@ -15,7 +15,8 @@
     "animate.css": "~3.4.0",
     "font-awesome": "4.2.0",
     "bootstrap": "~3.3.6",
-    "site-template": "https://github.com/IronSummitMedia/startbootstrap-stylish-portfolio.git#v1.0.2"
+    "site-template": "https://github.com/IronSummitMedia/startbootstrap-stylish-portfolio.git#v1.0.2",
+    "angular-bootstrap-lightbox": "0.10.0"
   },
   "overrides": {
     "site-template": {

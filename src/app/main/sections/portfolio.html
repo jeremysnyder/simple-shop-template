@@ -1,0 +1,10 @@
+<h2>Our Work</h2>
+<hr class="small">
+<div class="row">
+  <div class="portfolio-item" ng-repeat="x in vm.portfolio">
+    <a href="" ng-click="vm.moreImages(x)">
+      <img class="img-portfolio img-responsive img-thumbnail" ng-src="assets/images/thumb/{{x.mainImage}}">
+      <div class="description">{{x.name}}</div>
+    </a>
+  </div>
+</div>

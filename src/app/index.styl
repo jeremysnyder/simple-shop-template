@@ -13,7 +13,13 @@ div[ui-view]
   background url(../assets/images/bg.jpg) no-repeat center center scroll
   background-size cover
 
+sidebar-width = 220px
+#sidebar-wrapper
+  &.active
+    width sidebar-width
 
+  .sidebar-nav
+    width sidebar-width
 
 // injector
 // endinjector

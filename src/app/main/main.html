@@ -1,30 +1,34 @@
-<!-- Navigation -->
 <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+
 <nav id="sidebar-wrapper">
   <ul class="sidebar-nav">
     <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-    <li class="sidebar-brand">
-      <a href="#top">{{vm.companyName}}</a>
+      <a href="#top">{{vm.companyNameAbbreviation || '&nbsp;'}}</a>
     </li>
     <li>
-      <a href="#top">Home</a>
+      <a href="#top"><i class="fa fa-chevron-right"></i> Home</a>
     </li>
     <li>
-      <a href="#about">About</a>
+      <a href="#about"><i class="fa fa-chevron-right"></i> About</a>
+    </li>
+    <li ng-show="vm.services && vm.services.length">
+      <a href="#services"><i class="fa fa-chevron-right"></i> Services</a>
+    </li>
+    <li ng-show="vm.products && vm.products.length">
+      <a href="#products"><i class="fa fa-chevron-right"></i> Products</a>
+    </li>
+    <li ng-show="vm.portfolio && vm.portfolio.length">
+      <a href="#portfolio"><i class="fa fa-chevron-right"></i> Portfolio</a>
+    </li>
+    <li ng-show="vm.map">
+      <a href="#map"><i class="fa fa-chevron-right"></i> Map</a>
     </li>
     <li>
-      <a href="#services">Services</a>
-    </li>
-    <li>
-      <a href="#portfolio">Portfolio</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
+      <a href="#contact"><i class="fa fa-chevron-right"></i> Contact</a>
     </li>
   </ul>
 </nav>
 
-<!-- Header -->
 <header id="top" class="header">
   <div class="text-vertical-center">
     <h1>{{vm.companyName}}</h1>
@@ -33,7 +37,6 @@
   </div>
 </header>
 
-<!-- About -->
 <section id="about" class="about">
   <div class="container">
     <div class="row">
@@ -47,107 +50,43 @@
   </div>
 </section>
 
-<!-- Services -->
-<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id="services" class="services bg-primary">
+<section id="services" class="services bg-primary" ng-show="vm.services && vm.services.length">
   <div class="container">
     <div class="row text-center">
       <div class="col-lg-10 col-lg-offset-1">
-        <h2>Our Services</h2>
-        <hr class="small">
-        <div class="row">
-          <div class="col-md-3 col-sm-6" ng-repeat="service in vm.services">
-            <div class="service-item">
-              <span class="fa-stack fa-4x">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-{{service.icon}} fa-stack-1x text-primary"></i>
-              </span>
-              <h4>
-                <strong>{{service.name}}</strong>
-              </h4>
-              <p>{{service.description}}</p>
-              <a href="#" class="btn btn-light">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.row (nested) -->
+        <ng-include src="'app/main/sections/services.html'">
+          <span class="failed-to-load">Failed to load services</span>
+        </ng-include>
       </div>
-      <!-- /.col-lg-10 -->
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container -->
 </section>
 
-<!-- Callout -->
-<!-- <aside class="callout">
-    <div class="text-vertical-center">
-        <h1>Vertically Centered Text</h1>
+<section id="products" class="products bg-primary" ng-show="vm.products && vm.products.length">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-10 col-lg-offset-1">
+        <ng-include src="'app/main/sections/products.html'">
+          <span class="failed-to-load">Failed to load products</span>
+        </ng-include>
+      </div>
     </div>
-</aside> -->
+  </div>
+</section>
 
-<!-- Portfolio -->
-<section id="portfolio" class="portfolio">
+<section id="portfolio" class="portfolio" ng-show="vm.portfolio && vm.portfolio.length">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1 text-center">
-        <h2>Our Work</h2>
-        <hr class="small">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /.row (nested) -->
-        <a href="#" class="btn btn-dark">View More Items</a>
+        <ng-include src="'app/main/sections/portfolio.html'">
+          <span class="failed-to-load">Failed to load footer</span>
+        </ng-include>
       </div>
-      <!-- /.col-lg-10 -->
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container -->
 </section>
 
-<!-- Call to Action -->
-<!-- <aside class="call-to-action bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3>The buttons below are impossible to resist.</h3>
-                <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
-            </div>
-        </div>
-    </div>
-</aside> -->
-
-<!-- Map -->
-<section id="contact" class="map">
+<section id="map" class="map" ng-if="vm.map">
   <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ng-src="{{vm.address | googleMapUrl | trust}}"></iframe>
   <br />
   <small>
@@ -156,12 +95,11 @@
   </iframe>
 </section>
 
-<!-- Footer -->
-<footer>
+<footer id="contact">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1 text-center">
-        <ng-include src="'app/main/footer.html'">
+        <ng-include src="'app/main/sections/footer.html'">
           <span class="failed-to-load">Failed to load footer</span>
         </ng-include>
       </div>

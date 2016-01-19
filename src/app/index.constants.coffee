@@ -1,2 +1,1 @@
-angular.module('simpleShopTemplate')
-  .constant 'moment', moment
+@sstApp.constant 'moment', moment

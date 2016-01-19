@@ -1,5 +1,4 @@
-angular.module 'simpleShopTemplate'
-  .config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
+@sstApp.config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
     'ngInject'
     $stateProvider
       .state 'home',
